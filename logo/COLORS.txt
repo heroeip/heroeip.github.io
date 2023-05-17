@@ -1,1 +1,11 @@
-1
+DARK = 545454
+----------------------------------
+#545454 is dark gray. 
+#545454 is RGB(84 84 84).
+RGB value is (84,84,84).
+----------------------------------
+WHITE = E6E6E6
+#E6E6E6 Color Codes
+Hex: #E6E6E6
+RGB: 230, 230, 230
+E6E6E6 gray grey mercury
