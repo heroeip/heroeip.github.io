@@ -1,0 +1,4 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-STREAM-INF:CODECS="mp4a.40.2",CLOSED-CAPTIONS=NONE
+https://playerservices.streamtheworld.com/api/livestream-redirect/BLUE_FM_100_7AAC.aac
