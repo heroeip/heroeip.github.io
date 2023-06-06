@@ -1,0 +1,4 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-STREAM-INF:CODECS="mp4a.40.2",CLOSED-CAPTIONS=NONE
+https://mdstrm.com/audio/60a2745ff943100826374a70/icecast.audio?.aac
