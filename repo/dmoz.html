@@ -628,10 +628,12 @@
                     var keyString = `"${config.k1}":"${config.k2}"`;
                     var base64Key = btoa(keyString);
 
+                    var extensionUrl = `moz-extension://1f209270-f1dd-46ab-8127-a6eae003fe0d/pages/player.html#${config.url}?ck=${encodeURIComponent(base64Key)}`;
                    
-                    var extensionUrl = `chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#${config.url}?ck=${encodeURIComponent(base64Key)}`;
+           //         var extensionUrl = `chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#${config.url}?ck=${encodeURIComponent(base64Key)}`;
                 } else {
-                    var extensionUrl = "chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#" + config.url;
+                    var extensionUrl = "moz-extension://1f209270-f1dd-46ab-8127-a6eae003fe0d/pages/player.html#" + config.url;
+           //         var extensionUrl = "chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#" + config.url;
                 }
 
                 // console.log("Extension:"+extensionUrl);
