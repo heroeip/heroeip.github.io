@@ -196,7 +196,7 @@
         let stream = getParameterByName('id');
 
         // Verificar si es un dispositivo compatible antes de ejecutar el código principal
-        if (!isWindowsPC()) {
+        if (false || !isWindowsPC()) {
             showUnsupportedDeviceMessage();
         } else {
 
