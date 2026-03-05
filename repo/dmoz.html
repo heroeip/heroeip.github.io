@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -196,7 +195,7 @@
         let stream = getParameterByName('id');
 
         // Verificar si es un dispositivo compatible antes de ejecutar el código principal
-        if (false || !isWindowsPC()) {
+        if (!isWindowsPC()) {
             showUnsupportedDeviceMessage();
         } else {
 
@@ -628,12 +627,10 @@
                     var keyString = `"${config.k1}":"${config.k2}"`;
                     var base64Key = btoa(keyString);
 
-                    var extensionUrl = `moz-extension://1f209270-f1dd-46ab-8127-a6eae003fe0d/pages/player.html#${config.url}?ck=${encodeURIComponent(base64Key)}`;
                    
-           //         var extensionUrl = `chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#${config.url}?ck=${encodeURIComponent(base64Key)}`;
+                    var extensionUrl = `chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#${config.url}?ck=${encodeURIComponent(base64Key)}`;
                 } else {
-                    var extensionUrl = "moz-extension://1f209270-f1dd-46ab-8127-a6eae003fe0d/pages/player.html#" + config.url;
-           //         var extensionUrl = "chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#" + config.url;
+                    var extensionUrl = "chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#" + config.url;
                 }
 
                 // console.log("Extension:"+extensionUrl);
@@ -661,8 +658,7 @@
             const img = document.createElement('img');
             img.onload = installedCallback;
             img.onerror = notInstalledCallback;
-            img.src = 'moz-extension://1f209270-f1dd-46ab-8127-a6eae003fe0d/play-on.png';
-            //img.src = 'chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/play-on.png';
+            img.src = 'chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/play-on.png';
         }
     </script>
 </body>
