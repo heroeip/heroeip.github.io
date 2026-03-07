@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="pragma" content="no-cache" />
+<title></title>
+<style type="text/css">
+html, body {
+   margin: 0;
+   padding: 0;
+}.jw-progress {
+    background-color: #35afe3 !important;
+}
+</style>
+<script src="https://ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
+<script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';</script>
+</head>
+<body>
+<div id="player"></div>
+<script type="text/javascript">
+
+	function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+
+	var playerInstance= jwplayer("player");
+        let stream = getParameterByName('id') || "RAI";
+
+        // Verificar si es un dispositivo compatible antes de ejecutar el código principal
+        if (stream == "") {
+            alert('Página no encontrada');
+        } else {
+
+            var mt_red = ["cdnlb","cdn02", "cdn03"];
+            let mt_gigared = mt_red[Math.floor(Math.random() * mt_red.length)];
+
+            console.log(mt_gigared);
+
+            var ConfiguracionCanales = {
+               
+                "Telefe": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Telefe/sa_live_dash/Telefe.mpd",
+                    k1: "865b35fdb4c119f3ccfd4ee392928aef",
+                    k2: "b43adf6d88b3befbf7f69a71dc273e46"
+                },
+                "TV_Publica": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/TV_Publica/sa_live_dash/TV_Publica.mpd",
+                    k1: "f50f7ac8cca2bcb40bf4a895b6378cea",
+                    k2: "0ca9392a44d0c0ff79abc01c15df8888"
+                },
+                "Canal_13": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Canal_13/sa_live_dash/Canal_13.mpd",
+                    k1: "949b84fa1101cbbde24d616e3e36fc04",
+                    k2: "ea87aa98660f4f965e6b9584369c5fa3"
+                },
+                "CanalA": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/CanalA/sa_live_dash/CanalA.mpd",
+                    k1: "097578fb861438a8deecc5643082997b",
+                    k2: "3ac02ae9a503e76a58f1e94eebd5f43d"
+                },
+                "TN": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/TN/sa_live_dash/TN.mpd",
+                    k1: "c5bb6f9ef3b632b7ba2797048b4941a0",
+                    k2: "53f33a7ab0729daee5dbe8ecc8ee2c08"
+                },
+                "C5N": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/C5N/sa_live_dash/C5N.mpd",
+                    k1: "a4b47d87494bd17dd7acf86ebb6c3a32",
+                    k2: "5df76e3d86d8d88799c52eae263d08b0"
+                },
+                "Canal_9": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Canal_9/sa_live_dash/Canal_9.mpd",
+                    k1: "eaecaad505a66fab4161959099767384",
+                    k2: "ca66afd7ba0f3ce767b698b5e94c84e3"
+                },
+                "AmericaTV": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/AmericaTV/sa_live_dash/AmericaTV.mpd",
+                    k1: "32392e5868873c91ca77a0406b3d32d8",
+                    k2: "0f74f66dbeda0bb43b32445ea74d2087"
+                },
+                "LNmas": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/LNmas/sa_live_dash/LNmas.mpd",
+                    k1: "ffbe99278cd1aea87b3506d1c06defd6",
+                    k2: "fa8d96b8c2d97390ab329241a4e651ae"
+                },
+                "A24": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/A24/sa_live_dash/A24.mpd",
+                    k1: "c43779fa115f80c118c29665cc78e4ba",
+                    k2: "4303ea7157eb2e6f6ce980bb87183825"
+                },
+                "Unife": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Unife/sa_live_dash/Unife.mpd",
+                    k1: "7213abb07b0ce71bedc6ba337e168fa4",
+                    k2: "317bc08ed843883a9397c61b22e1b60e"
+                },
+                "Canal26": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Canal26/sa_live_dash/Canal26.mpd",
+                    k1: "e9a29d60110b731c5f3a141084379a40",
+                    k2: "8dcb1a09a6007fe72d621a09017276ba"
+                },
+                "Canal_Local_Gigared_Posadas": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Canal_Local_Gigared_Posadas/sa_live_dash/Canal_Local_Gigared_Posadas.mpd",
+                    k1: "ced47361cf2f266e0842894d1c925464",
+                    k2: "3c12297f2cb08d14f30382bcb9e247bf"
+                },
+                "Canal_Local_Gigared_Resistencia": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Canal_Local_Gigared_Resistencia/sa_live_dash/Canal_Local_Gigared_Resistencia.mpd",
+                    k1: "b7d80939c0ead461d0cf449148e1db45",
+                    k2: "a5e57ec6360536d2ebc479eab3fda3b9"
+                },
+                "Canal_Local_Gigared_Santa_Fe": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Canal_Local_Gigared_Santa_Fe/sa_live_dash/Canal_Local_Gigared_Santa_Fe.mpd",
+                    k1: "c48d578949a3d595c87232a17430e375",
+                    k2: "6ef34a3ae28d31ddb9e3741fe15e36f8"
+                },
+                "Museum_TV": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Museum_TV/sa_live_dash/Museum_TV.mpd",
+                    k1: "56ec00961b8711a7e39f326c3ed8295d",
+                    k2: "4e8742a824e7ac6e603ffa58fe821e88"
+                },
+                "Sony_Movies": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Sony_Movies/sa_live_dash/Sony_Movies.mpd",
+                    k1: "4201cacd22f7a4f3bb6db354c9ac9d75",
+                    k2: "f43bbaf105697ac3f8ff4c69ee30967f"
+                },
+                "TVE": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/TVE/sa_live_dash/TVE.mpd",
+                    k1: "40d5b3d7302d0d707e88ea1cb4b194b5",
+                    k2: "b0f99846a1680e9425e8c76aae57fb53"
+                },
+                "MTV": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/MTV/sa_live_dash/MTV.mpd",
+                    k1: "92a2837411c8be67f7ec1f79a7996750",
+                    k2: "1ec313bd01d3f6d306fff11e4b032a1b"
+                },
+                "Animal_Planet": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Animal_Planet/sa_live_dash/Animal_Planet.mpd",
+                    k1: "5eded9e86a760b6e23d1ce1d80b85484",
+                    k2: "74e74a9ea3933219454c81f28ade93a8"
+                },
+                "Discovery_Turbo": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Discovery_Turbo/sa_live_dash/Discovery_Turbo.mpd",
+                    k1: "55b1aff18cff06f311d2f53145c0a748",
+                    k2: "7556d7b06fa5f94c7501c8956a764931"
+                },
+                "Discovery_Science": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Discovery_Science/sa_live_dash/Discovery_Science.mpd",
+                    k1: "26c0b72d115923133a5a9e4d4011819f",
+                    k2: "cf04154c74f09b1fd98115a9e04fcec6"
+                },
+                "Discovery_World": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Discovery_World/sa_live_dash/Discovery_World.mpd",
+                    k1: "cea94fefef1ff96d4ab0e27fb846b0c3",
+                    k2: "634b2496b64bffc426bd4093c5945ec3"
+                },
+                "Investigation_discovery": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Investigation_discovery/sa_live_dash/Investigation_discovery.mpd",
+                    k1: "54c693fe580f7a376d3a4ffcbaff2377",
+                    k2: "64f7f672af645bd14c26f598e65ca686"
+                },
+                "Nat_Geo": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Nat_Geo/sa_live_dash/Nat_Geo.mpd",
+                    k1: "aa5e6dae90f144937f1cf638460efe13",
+                    k2: "284534e78bb04505bae9b484b2dc1537"
+                },
+                "TLC": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/TLC/sa_live_dash/TLC.mpd",
+                    k1: "28f91c97b02842d14c2196467d9f22ec",
+                    k2: "07167c215250ae056a8f5dfb9b80d3a4"
+                },
+                "HGTV": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/HGTV/sa_live_dash/HGTV.mpd",
+                    k1: "75dab5c02f8c98acc2a461a99da99b7e",
+                    k2: "01fbb96e5283f6706b102c8d8ad54c5c"
+                },
+                "Mas_Chic": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Mas_Chic/sa_live_dash/Mas_Chic.mpd",
+                    k1: "f4eafc89afd50886c0fc2cc733dc62d8",
+                    k2: "dd9be06d69c495b23952652b0f765892"
+                },
+                "El_Gourmet": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/El_Gourmet/sa_live_dash/El_Gourmet.mpd",
+                    k1: "a9034121a55c5254270a7fc87e6b933c",
+                    k2: "630f14e9ca88c92a25af19834bbf01d6"
+                },
+                "Plim_Plim": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Plim_Plim/sa_live_dash/Plim_Plim.mpd",
+                    k1: "44292917d1f5519af4598ccfc66b53dd",
+                    k2: "f90cee2e43e02176113cff8ccf09465e"
+                },
+                "Nickelodeon": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Nickelodeon/sa_live_dash/Nickelodeon.mpd",
+                    k1: "611595b6387cdcfb67ce564768fd61aa",
+                    k2: "dd5fba9ab529822129c09c029b28651c"
+                },
+                "Cine_Premium": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Cine_Premium/sa_live_dash/Cine_Premium.mpd",
+                    k1: "670ffd29bd6ada72170188ed785f7e2f",
+                    k2: "7fa7edadd763531e133bf4a1aef51ce3"
+                },
+                "Cine_Familiar": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Cine_Familiar/sa_live_dash/Cine_Familiar.mpd",
+                    k1: "721b4557143c8a37ec427423785875e5",
+                    k2: "3b76efe869910f4d86012915422a5b89"
+                },
+                "Film_and_Arts": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Film_and_Arts/sa_live_dash/Film_and_Arts.mpd",
+                    k1: "940d79fb1961288803c64e60da991c5a",
+                    k2: "f55e18690327be6db3a1cf24b5be438b"
+                },
+                "Golden_Plus": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Golden_Plus/sa_live_dash/Golden_Plus.mpd",
+                    k1: "2127eb2cb9152cb1a21815cf423b7114",
+                    k2: "3a1715592b6916bb3c2e7e477c5441bd"
+                },
+                "Golden_Edge": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Golden_Edge/sa_live_dash/Golden_Edge.mpd",
+                    k1: "db61dc785664ffa25a061f2dcbaa5932",
+                    k2: "94f6b0deb7436265c839d6faf0112f21"
+                },
+                "Golden": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Golden/sa_live_dash/Golden.mpd",
+                    k1: "384a49756e9d5247537404c487edf312",
+                    k2: "72e31a1d402eb30584c541736267f478"
+                },
+                "Sony_Channel": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Sony_Channel/sa_live_dash/Sony_Channel.mpd",
+                    k1: "a2e6c6842391fd4d9dfe3c047e286eb4",
+                    k2: "7d563478e5669d44cec9a6215052fec3"
+                },
+                "AMC": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/AMC/sa_live_dash/AMC.mpd",
+                    k1: "d60a3128c3cbe6c2728ccca61f55a87f",
+                    k2: "1cc37b6959b6f9e7f70532604d1e8ed1"
+                },
+                "AXN": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/AXN/sa_live_dash/AXN.mpd",
+                    k1: "bac0cdbf2e5a82fb27818e30bc8b75e5",
+                    k2: "478bda16b7bbb4d01928270159771bd9"
+                },
+                "Comedy_Central": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Comedy_Central/sa_live_dash/Comedy_Central.mpd",
+                    k1: "e2ef982ad8e10b04abb16ecfe4deab17",
+                    k2: "c9ec0f4087a3cd993de0a0dcb0a8a86b"
+                },
+                "AyE": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/AyE/sa_live_dash/AyE.mpd",
+                    k1: "0e45fe47af35c23962a3cc0ada9119f0",
+                    k2: "84f178941bbcedca8d43926b69cca9b1"
+                },
+                "Cine_ar": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Cine_ar/sa_live_dash/Cine_ar.mpd",
+                    k1: "ff87d23b45efc58ff6a7ad0f5fdef566",
+                    k2: "0e84fa871d67fede2c5385b54b60b5dc"
+                },
+                "Universal": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Universal/sa_live_dash/Universal.mpd",
+                    k1: "281ed03234dce7e50391f9c4c7c90b48",
+                    k2: "148c12b5c4526f3f7ab70f385cb36fac"
+                },
+                "El_Garage": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/El_Garage/sa_live_dash/El_Garage.mpd",
+                    k1: "c44389e1e90fb4d80e0a0d8090f8da1f",
+                    k2: "7bdf6460869276e70bd3eae576be2286"
+                },
+                "eeespee1-giaaaa": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/ESPN/sa_live_dash/ESPN.mpd",
+                    k1: '8b55a3ba068f882f49b36d216f29506f',
+                    k2: '77f418bbcfc73739ebca9c52321472d3',
+                },
+                "eeespee2-giaaaa": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/ESPN2/sa_live_dash/ESPN2.mpd",
+                    k1: '02819f905f4e126d492693e44c688b82',
+                    k2: 'a12adec960cd1e33ad3b8ddbf0dd22b9',
+                },
+                "eeespee3-giaaaa": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/ESPN3/sa_live_dash/ESPN3.mpd",
+                    k1: 'ad0c72e30648501377425a62a2bf095c',
+                    k2: '2cfbc73f423203a9fc8a1d983ec4e8bb',
+                },
+                "eeespee4-giaaaa": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/ESPN4/sa_live_dash/ESPN4.mpd",
+                    k1: "ecafef3b8979c737d05ea191a02b7617",
+                    k2: "f46cd12052b0da221a3a178e2bde0162"
+                },
+                "eeespreee-giaaaa": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/ESPN_Premium/sa_live_dash/ESPN_Premium.mpd",
+                    k1: 'dca96877c202470bdad9839bea525c0a',
+                    k2: 'd651871131d4b26f0095bcb9771b8f2f',
+                },
+                "teeeteespoo-giaaaa": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/TNT_Sports_Premium/sa_live_dash/TNT_Sports_Premium.mpd",
+                    k1: 'f26eb059fb0854f4d4218c895d7ae803',
+                    k2: 'ffcb3fd4bd5657889215be4cb6275d1b',
+                },
+                "teeeincceeeaargee-giaaaa": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/TyC_Sports/sa_live_dash/TyC_Sports.mpd",
+                    k1: 'cac7b52cb14661fe3db0449020791d97',
+                    k2: '0c2780acce4ef9d7334ef25be445ceb4',
+                },
+                "fooo1-giaaaa": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Fox_Sports/sa_live_dash/Fox_Sports.mpd",
+                    k1: "6c0016fff15fcc3cc5d103f821189100",
+                    k2: "94d789ac388ccbbfbd2cf91d5b7db028"
+                },
+                "fooo2-giaaaa": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Fox_Sports_2/sa_live_dash/Fox_Sports_2.mpd",
+                    k1: "a2e448d00073c0a66e02caa20a2fe135",
+                    k2: "70e9e4adfb2f0b5ac127654c1a56d238"
+                },
+                "fooo3-giaaaa": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Fox_Sports_3/sa_live_dash/Fox_Sports_3.mpd",
+                    k1: "f2f0d2f5e823bf3bd1113ed83b244c57",
+                    k2: "addd4c11afb303beb21f95f79a935561"
+                },
+                "Canal_12_Misiones": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Canal_12_Misiones/sa_live_dash/Canal_12_Misiones.mpd",
+                    k1: "ed6e9faec04aa78f261171d1ace48957",
+                    k2: "2995fa69fa1158e82547d5d5a22b4e98"
+                },
+                "24H": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/24H/sa_live_dash/24H.mpd",
+                    k1: "91978d09e4feadcdcb15c1d670e149d3",
+                    k2: "83f5a6f07b63a02157fffb9fc83e1c68"
+                },
+                "RAI": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/RAI/sa_live_dash/RAI.mpd",
+                    k1: "a2e6c6842391fd4d9dfe3c047e286eb4",
+                    k2: "7d563478e5669d44cec9a6215052fec3"
+                },
+                "Telehit_Musica": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Telehit_Musica/sa_live_dash/Telehit_Musica.mpd",
+                    k1: "f8837e4d7fdfaba5940310e719e12b99",
+                    k2: "057a34cc85e38471e2a023b78ec79175"
+                },
+                "Telehit_Plus": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Telehit_Plus/sa_live_dash/Telehit_Plus.mpd",
+                    k1: "6dcafee5775552f97891dfdada84df85",
+                    k2: "089ae50f8036135e7e458292e44676b5"
+                },
+                "CM": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/CM/sa_live_dash/CM.mpd",
+                    k1: "1713f5c8e140bc32fab3893341bd6bf6",
+                    k2: "85dbe90fab4bca195924b7cb17bfc211"
+                },
+                "Love_Nature": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Love_Nature/sa_live_dash/Love_Nature.mpd",
+                    k1: "30c35033226fea72c04b3fbdd3fe67d5",
+                    k2: "fbf7d2dffa946cbf38ef329a5f31f795"
+                },
+                "Quiero_Musica": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Quiero_Musica/sa_live_dash/Quiero_Musica.mpd",
+                    k1: "8be45f648b2f5a27f6c16a8dce2c92e1",
+                    k2: "defd91f23137624fec9fe157d6adc1dd"
+                },
+                "History_Channel": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/History_Channel/sa_live_dash/History_Channel.mpd",
+                    k1: "0c14f56c92a97db5abb4b83da823f81f",
+                    k2: "143a64606506c57b452bd9c8327bd6ff"
+                },
+                "Discovery_Channel": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Discovery_Channel/sa_live_dash/Discovery_Channel.mpd",
+                    k1: "142c0c050c551486e07bc210a1357da6",
+                    k2: "0dbbc07185e4650e1a05dbbcb888909f"
+                },
+                "E_Entertainment": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/E_Entertainment/sa_live_dash/E_Entertainment.mpd",
+                    k1: "a67b85023aec0c096831b2b0373715fd",
+                    k2: "be97d3955e711dfa12237416a1b9ad52"
+                },
+                "Discovery_HyH": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Discovery_HyH/sa_live_dash/Discovery_HyH.mpd",
+                    k1: "270233c3621c173ad74f16aa6ba367ac",
+                    k2: "b39c8748f7f7530b1591c3a2ee0a3703"
+                },
+                "Telenovelas": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Telenovelas/sa_live_dash/Telenovelas.mpd",
+                    k1: "214c0efa71c1ac68be8143b18e4a5a52",
+                    k2: "dbd58022cf2f0f6c69e979a54346cc8b"
+                },
+                "PakaPaka": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/PakaPaka/sa_live_dash/PakaPaka.mpd",
+                    k1: "0aa7687e39e7e7e2e3d64d87a2fa1920",
+                    k2: "523cc84985fadae95289dd88838133c9"
+                },
+                "Disney_Junior": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Disney_Junior/sa_live_dash/Disney_Junior.mpd",
+                    k1: "0eabe9f5aee4020c50f52a2bf476ac57",
+                    k2: "490fc8a1a900893d20631da45412879d"
+                },
+                "Disney_Channel": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Disney_Channel/sa_live_dash/Disney_Channel.mpd",
+                    k1: "629f78368829802ade506b8f03e2d18b",
+                    k2: "6824ea53d6fd70d146b9e31a57cf3a20"
+                },
+                "Discovery_Kids": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Discovery_Kids/sa_live_dash/Discovery_Kids.mpd",
+                    k1: "1f92dc6055aefecb8a2abdba9ecf65cb",
+                    k2: "23a68bb309729298ceb3b5fcd3ff174d"
+                },
+                "Zoo_Moo": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Zoo_Moo/sa_live_dash/Zoo_Moo.mpd",
+                    k1: "8fe8869466801cac2f84dcc6c3584d76",
+                    k2: "d6c878a3c04face66707d817ec62d628"
+                },
+                "Eurochannel": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Eurochannel/sa_live_dash/Eurochannel.mpd",
+                    k1: "ee22649f9cf24a09c8e2d7f527b61ab6",
+                    k2: "5f4f4cf346468adb895a5b5d5edd9a72"
+                },
+                "Studio_Universal": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Studio_Universal/sa_live_dash/Studio_Universal.mpd",
+                    k1: "68987b791521decfbe5dd633a3c15dc5",
+                    k2: "cff99d15661b3e8393d9ac9dd9a89869"
+                },
+                "USA_Network": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/USA_Network/sa_live_dash/USA_Network.mpd",
+                    k1: "072f31c5b5238da0d3b54b2a79e7a7d9",
+                    k2: "984532822dc6ff3be1ffc56b0686d290"
+                },
+                "Star_Channel": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Star_Channel/sa_live_dash/Star_Channel.mpd",
+                    k1: "ba8e3594a2280a1f0b749d66dccfab99",
+                    k2: "efa66c01f0e96775398994f1754be46b"
+                },
+                "FX": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/FX/sa_live_dash/FX.mpd",
+                    k1: "b060d6864d9b870b3a5f43c10370977c",
+                    k2: "7a9104e80a2bd14429ad4c877a9926b5"
+                },
+                "Cinecanal": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/Cinecanal/sa_live_dash/Cinecanal.mpd",
+                    k1: "ed9cb36b2c7ab639bb5b8627b2e980e8",
+                    k2: "a0d844faf1c31330165393e43e0d3bd8"
+                },
+                "TNT": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/TNT/sa_live_dash/TNT.mpd",
+                    k1: "9d9e8eb8d97c4ff0dbfb02c3c417ae48",
+                    k2: "a426cb9e3ff4cac8b2e153ef54e69072"
+                },
+                "DeporTV": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/DeporTV/sa_live_dash/DeporTV.mpd",
+                    k1: "5f8bcea8ec9fdd5e6927e46ce856824b",
+                    k2: "3cf09d0c9ebeab2edfe600887e61b368"
+                },
+                "13_Max_Digital": {
+                    url: "https://" + mt_gigared + ".gigared.com.ar/live/eds/13_Max_Digital/sa_live_dash/13_Max_Digital.mpd",
+                    k1: '42c456cdb80d65376b1544925edb20fa',
+                    k2: 'ad416b60ccc666b7dd607a8786c9ed86',
+                },
+               
+            };
+
+var start = getParameterByName('start');
+var autostart = "true";//start !== undefined && start === "true";
+
+var config = ConfiguracionCanales[stream];
+
+playerInstance.setup({
+    playlist: [{
+        "sources": [
+            {
+                "default": false,
+                "type": "dash",
+                "file": config.url,
+                "drm": {
+                    "clearkey": { "keyId": config.k1, "key": config.k2 }
+                },
+                "label": "0"
+            }
+        ]
+    }],
+    width: "100%",
+    height: "100%",
+    aspectratio: "16:9",
+    autostart: autostart,
+    mute: true,
+    cast: {},
+    sharing: {}
+});
+
+
+}
+	
+ if (stream != "") {
+    playerInstance.on("error", function() {
+        var redirectUrl = '/gi.html?start=true';
+        window.location = redirectUrl;
+    });
+}
+
+var getLang = getParameterByName('lang');
+var selectedLanguage = getLang;
+var selectedLanguage2 = 1;  
+var languageChangedDuringPlay = false;
+
+jwplayer().on('play', function(e) {
+  jwplayer("player").setMute(false);
+  if (!languageChangedDuringPlay) {
+    var currentLanguage = jwplayer().getCurrentAudioTrack();
+
+    if (currentLanguage !== selectedLanguage && currentLanguage !== selectedLanguage2) {
+      jwplayer().setCurrentAudioTrack(selectedLanguage);
+      languageChangedDuringPlay = true;
+    }
+  }
+});
+
+jwplayer().on('complete', function(e) {
+  languageChangedDuringPlay = false;
+});
+
+</script>
+</body>
+</html>
